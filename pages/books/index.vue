@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full container">
     <p class="pageTitle playfair-display text-3xl font-bold mb-10">
       All Books:
     </p>
