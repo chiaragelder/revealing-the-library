@@ -1,38 +1,69 @@
 <template>
-  <div>
-    <nav class="mb-2">
+  <header class="nav-header">
+    <div class="logo-container">
+      <NuxtLink to="/">
+        <img src="assets/styles/AnimatieLOGONieuw.gif" alt="Zoie Logo" class="logo-image" />
+      </NuxtLink>
+    </div>
+
+    <nav class="nav-bar">
       <ul class="nav-list flex">
-        <li class="nav-item">
-          <NuxtLink to="/about">About</NuxtLink>
-          <!-- Subnavigatie voor About -->
-          <ul class="sub-nav">
-            <li><NuxtLink to="/about/practical-information">Practical Information</NuxtLink></li>
-            <li><NuxtLink to="/about/us">Us</NuxtLink></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <NuxtLink to="/books">Books</NuxtLink>
-        </li>
-        <li class="nav-item">
-          <NuxtLink to="/collections">Collections</NuxtLink>
-        </li>
-        <li class="nav-item">
-          <NuxtLink to="/loginpage">Login</NuxtLink>
-        </li>
-        <li class="nav-item">
-          <NuxtLink to="/bookpage">book1</NuxtLink>
-        </li>
+        <li class="nav-item"><NuxtLink to="/about">About</NuxtLink></li>
+        <li class="nav-item"><NuxtLink to="/collections">Collections</NuxtLink></li>
+        <li class="nav-item"><NuxtLink to="/loginpage">Login</NuxtLink></li>
+        <li class="nav-item"><NuxtLink to="/books">Books</NuxtLink></li>
+        
       </ul>
     </nav>
-  </div>
+  </header>
 </template>
 
+
+
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+.nav-header {
+  width: 100%;
+  background: white;
+  padding: 20px 40px -20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 500px;
+  gap: 60px;
+  border-bottom: 1px solid #ccc; 
+}
+
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* logo links */
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo-image {
+  height: 150px;
+  width: auto;
+  min-width: 100px;
+  flex-shrink: 0;
+  display: block;
+  margin-top: -20px;
+}
+
+/* nav-bar rechts van logo */
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
 
 .nav-list {
   display: flex;
-  justify-content: flex-start; /* Zorgt dat de lijstitems naar links gaan */
   align-items: center;
   list-style: none;
   padding: 0;
@@ -40,35 +71,37 @@
 }
 
 .nav-item {
-  margin-right: 70px; /* Vergroot de ruimte tussen de items */
-  position: relative; /* Nodig voor de subnavigatie */
+  margin-right: 30px;
+  position: relative;
+}
+
+.nav-item:last-child {
+  margin-right: 0;
 }
 
 .nav-item a {
   text-decoration: none;
   color: #333;
-  font-family: 'Playfair Display', serif; /* Zet het lettertype op Playfair Display */
-  font-size: 22px; /* Vergroot de tekstgrootte */
-  font-weight: 700; /* Maak de tekst vetter */
+  font-family: 'lato', serif;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 .nav-item a:hover {
   color: #426366;
 }
 
-/* Subnavigatie styling */
 .sub-nav {
-  display: none; /* Verberg de subnavigatie standaard */
+  display: none;
   position: absolute;
-  top: 100%; /* Zet de subnavigatie direct onder het hoofdnavigatie-item */
+  top: 100%;
   left: 0;
-  background-color: #426366; /* Blauwe achtergrond */
+  background-color: #426366;
   padding: 10px;
   list-style: none;
   margin: 0;
   border-radius: 4px;
-  width: auto; /* Laat de breedte automatisch de lengte van de tekst volgen */
-  min-width: 160px; /* Stel een minimale breedte in voor consistentie */
+  min-width: 160px;
 }
 
 .sub-nav li {
@@ -76,21 +109,18 @@
 }
 
 .sub-nav li a {
-  color: white; /* Witte tekst in de subnavigatie */
-  font-weight: normal; /* Maak de tekst normaal */
+  color: white;
+  font-weight: normal;
 }
 
 .sub-nav li a:hover {
-  color: #ffdd57; /* Gouden kleur bij hover */
+  color: #ffdd57;
 }
 
-/* Toon de subnavigatie bij hover */
 .nav-item:hover .sub-nav {
   display: block;
-}
-
-/* Zorg ervoor dat de subnavigatie niet over de volgende items komt */
-.nav-item:hover .sub-nav {
   z-index: 10;
 }
+
+
 </style>
